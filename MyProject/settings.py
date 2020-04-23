@@ -54,9 +54,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'MyProject.urls'
+
 
 TEMPLATES = [
     {
@@ -121,20 +123,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-CSS_URL = '/css/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
-
-ADMIN_MEDIA_PREFIX = '/static/admin/'  # in order to provide the new location of the copied admin CSS pages
+# ADMIN_MEDIA_PREFIX = '/static/admin/'  # in order to provide the new location of the copied admin CSS pages
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
